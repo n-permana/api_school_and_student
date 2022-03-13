@@ -23,5 +23,5 @@ ADD . /manatal
 
 EXPOSE 8001
 
-CMD gunicorn -w 3 app.wsgi -b :8001
+CMD gunicorn -w 3 app.wsgi -b :8000
 # --worker-class eventlet

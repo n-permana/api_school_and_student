@@ -9,8 +9,8 @@ services:
     depends_on:
       - postgres
     ports:
-      - 8002:8002
-    command: [ "gunicorn", "-w", "3", "app.wsgi", "-b", ":8002" ]
+      - 8000:8000
+    command: [ "gunicorn", "-w", "3", "app.wsgi", "-b", ":8000" ]
   postgres:
     container_name: postgres
     restart: always

@@ -8,6 +8,11 @@ django = "*"
 django-environ = "*"
 psycopg2-binary = "*"
 gunicorn = "*"
+djangorestframework = "*"
+markdown = "*"
+django-filter = "*"
+drf-nested-routers = "*"
+isort = "*"
 
 [dev-packages]
 
