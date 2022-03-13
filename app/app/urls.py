@@ -13,6 +13,8 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
+from posixpath import basename
+
 from django.contrib import admin
 from django.urls import include, path
 
@@ -22,16 +24,16 @@ from schools import views
 
 # School Router
 school_router = routers.SimpleRouter()
-school_router.register(r"schools", views.SchoolViewSet)
+school_router.register(r"schools", views.SchoolViewSet, basename="schools")
 nested_school_router = routers.NestedSimpleRouter(
     school_router, r"schools", lookup="schools"
 )
 nested_school_router.register(
-    r"students", views.SchoolStudentViewSet, basename="school-student"
+    r"students", views.SchoolStudentViewSet, basename="school-students"
 )
 # Student Router
 student_router = routers.SimpleRouter()
-student_router.register(r"students", views.StudentViewSet)
+student_router.register(r"students", views.StudentViewSet, basename="students")
 
 urlpatterns = [
     # path("admin/", admin.site.urls),
