@@ -21,7 +21,7 @@ RUN pipenv install --system
 
 ADD . /manatal
 
-EXPOSE 8001
+EXPOSE 8000
 
 CMD gunicorn -w 3 app.wsgi -b :8000
 # --worker-class eventlet
